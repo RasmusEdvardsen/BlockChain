@@ -22,5 +22,10 @@ namespace Entities
         {
             return Blocks.All(block => block.GenerateHash() == block.Hash);
         }
+
+        public override string ToString()
+        {
+            return string.Join("\n", Blocks.Select((b, i) => $"Block #{i}: {b.Hash}"));
+        }
     }
 }

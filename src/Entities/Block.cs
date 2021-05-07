@@ -1,4 +1,3 @@
-using System;
 using Logic;
 
 namespace Entities
@@ -16,7 +15,7 @@ namespace Entities
             Hash = GenerateHash();
         }
 
-        public string GenerateHash() => CustomHash.Generate(PreviousHash, Data);
+        public string GenerateHash() => Crypto.GenerateHash(PreviousHash, Data);
         
         public override string ToString() => $"Block hash: {Hash}\nBlock data: {Data}";
     }
